@@ -1,0 +1,132 @@
+/* Mobile First Style */
+@media only screen and (max-width: 649px) {
+	.container {
+		width: 70%;
+		max-width: 375px;
+		margin: 0 auto;
+	}
+}
+
+@media only screen and (min-width: 650px) {
+	.jump:focus {
+		top: 0;
+	}
+	
+	.container {
+		margin: 0 10px;
+		background-image: url(../images/concrete_seamless.png);
+		background-repeat: repeat;
+	}
+}
+
+@media only screen and (min-width: 650px) and (max-width: 749px) {
+	.container {
+		display: grid;
+		grid-template-columns: repeat(3, 25%);
+		justify-content: space-around;
+	}
+	
+	.container figure:nth-child(odd) {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	.container figure:nth-child(even) {
+		grid-column-start: 2;
+		grid-column-end: 4;
+	}
+}
+
+@media only screen and (min-width: 750px) and (max-width: 899px) {
+	.container {
+		display: grid;
+		grid-template-columns: repeat(4, 20%);
+		justify-content: space-between;
+	}
+	
+	.container figure:nth-child(odd) {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	.container figure:nth-child(even) {
+		grid-column-start: 3;
+		grid-column-end: 5;
+	}
+	.container figure:last-child {
+		grid-column-start: 2;
+		grid-column-end: 4;
+	}
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1049px) {
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: center;
+	}
+	
+	.container figure {
+		width: 20%;
+	}
+	
+	.container figure:nth-child(4n) {
+		width: 40%;
+		border: 10px solid black;
+	}
+	
+	.container figure:nth-child(2) {
+		order: 1;
+	}
+}
+
+@media only screen and (min-width: 1050px) {
+	.container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		overflow: hidden;
+	}
+	
+	.container figure {
+		width: 75%;
+		margin: 0 auto 20px;
+	}
+	
+	.container figure:nth-child(odd) {
+		transform: rotate(-10deg);
+	}
+	
+	.container figure:nth-child(even) {
+		transform: rotate(10deg);
+	}
+	
+	.container figure:last-child {
+		transform: rotate(0);
+		grid-column: span 2;
+	}
+}
+
+/* Default Style */
+@keyframes logo_fadein {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+.logo {
+	animation: logo_fadein linear 10s;
+}
+
+.container figure img {
+	width: 100%;
+}
+
+
+.container figure figcaption {
+	text-align: center;
+	text-transform: capitalize;
+}
+
+@media only screen and (prefers-reduced-motion: reduce) and (min-width: 1050px) {
+	.logo {
+		animation: none;
+	}
+}
